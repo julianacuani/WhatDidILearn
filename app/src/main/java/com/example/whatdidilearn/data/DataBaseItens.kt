@@ -14,7 +14,7 @@ class DataBaseItens {
     val itemTwo = ItemLearned(
         "Layout editor",
         "O Design Editor exibe o layout em vários dispositivos e versões do Android.É possível criar e editar um layout usando apenas componentes visuais.",
-        Level.HIGH)
+        Level.MEDIUM)
 
     val itemThree = ItemLearned(
         "Git",
@@ -24,8 +24,13 @@ class DataBaseItens {
     val itemFour = ItemLearned(
         "GroupView",
         "É uma com.example.whatdidilearn.view especial que pode conter outras views (chamadas de filhos).É a classe base para layouts e contêineres de views.",
-        Level.HIGH)
+        Level.LOW)
 
-    return listOf(itemOne, itemTwo, itemThree, itemFour)
+    val itemFive = ItemLearned(
+        "View Binding",
+        "View Binding é um recurso que facilita a programação de códigos que interagem com views.",
+        Level.LOW)
+
+    return listOf(itemOne, itemTwo, itemThree, itemFour, itemFive)
     }
 }
