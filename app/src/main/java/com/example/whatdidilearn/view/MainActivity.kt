@@ -2,16 +2,19 @@ package com.example.whatdidilearn.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import com.example.whatdidilearn.R
 import com.example.whatdidilearn.data.DataBaseItens
+import com.example.whatdidilearn.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val recycleView = findViewById<RecyclerView>(R.id.items_recycle_view)
+        val recycleView = binding.itemsRecycleView
         val adapter = LearnedItemsAdapter()
         recycleView.adapter = adapter
 
