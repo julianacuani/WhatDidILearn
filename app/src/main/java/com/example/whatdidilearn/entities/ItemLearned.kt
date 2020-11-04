@@ -14,7 +14,7 @@ data class ItemLearned (
     val description: String,
 
     @ColumnInfo(name = "item_level")
-    val Level: Level,
+    val Level: Level, //understandingLevel para algumas
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "item_id")
