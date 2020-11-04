@@ -5,8 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.whatdidilearn.entities.ItemLearned
 import com.example.whatdidilearn.entities.Level
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Database(entities = [ItemLearned::class], version = 1, exportSchema = false )
 @TypeConverters(Converters::class)
@@ -66,6 +69,52 @@ abstract class DataBaseItems: RoomDatabase() {
             )
 
             return listOf(itemOne, itemTwo, itemThree, itemFour, itemFive)
+        }
+    }
+    private class DataBaseCallBack(private val scope: CoroutineScope): RoomDatabase.Callback(){
+        override fun onCreate(db: SupportSQLiteDatabase) {
+            super.onCreate(db)
+            INSTANCE?.let { database ->
+                scope.launch { poputateDataBase(database.learnedItemDao()) }
+            }
+        }
+        suspend fun poputateDataBase(dao: LearnedItemDao){
+            val itemOne = ItemLearned(
+                "Kotlin - Null safety",
+                "O sistema de tipos de Kotlin visa eliminar o perigo de referências nulas do código",
+                Level.HIGH
+            )
+
+            val itemTwo = ItemLearned(
+                "Layout editor",
+                "O Design Editor exibe o layout em vários dispositivos e versões do Android.É possível criar e editar um layout usando apenas componentes visuais.",
+                Level.MEDIUM
+            )
+
+            val itemThree = ItemLearned(
+                "Git",
+                "É um sistema de controle de versão distribuído. Com ele é possível rastrear mudanças no código-fonte durante o desenvolvimento de software.",
+                Level.HIGH
+            )
+
+            val itemFour = ItemLearned(
+                "GroupView",
+                "É uma com.example.whatdidilearn.view especial que pode conter outras views (chamadas de filhos).É a classe base para layouts e contêineres de views.",
+                Level.LOW
+            )
+
+            val itemFive = ItemLearned(
+                "View Binding",
+                "View Binding é um recurso que facilita a programação de códigos que interagem com views.",
+                Level.LOW
+            )
+
+            dao.insert(itemOne)
+            dao.insert(itemTwo)
+            dao.insert(itemThree)
+            dao.insert(itemFour)
+            dao.insert(itemFive)
+
         }
     }
 }

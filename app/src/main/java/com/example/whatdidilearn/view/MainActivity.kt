@@ -1,7 +1,10 @@
 package com.example.whatdidilearn.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import com.example.whatdidilearn.R
 import com.example.whatdidilearn.data.DataBaseItems
 import com.example.whatdidilearn.databinding.ActivityMainBinding
 
@@ -17,5 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         val learnedItemsList = DataBaseItems.getAll()
         adapter.data = learnedItemsList
+//-------------------------------------------------------------------------------
+      //  val buttonFab = findViewById<Button>(R.id.fab)
+      //  buttonFab.setOnClickListener {
+      //      var intent = Intent(this, NewLearnedItem::class.java)
+
+      //      startActivity(intent)
+      //  }
+//--------------------------------------------------------------------------------
     }
 }
