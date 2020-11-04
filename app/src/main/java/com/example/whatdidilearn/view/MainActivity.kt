@@ -2,10 +2,7 @@ package com.example.whatdidilearn.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.recyclerview.widget.RecyclerView
-import com.example.whatdidilearn.R
-import com.example.whatdidilearn.data.DataBaseItens
+import com.example.whatdidilearn.data.DataBaseItems
 import com.example.whatdidilearn.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = LearnedItemsAdapter()
         recycleView.adapter = adapter
 
-        val learnedItemsList = DataBaseItens().getAll()
+        val learnedItemsList = DataBaseItems.getAll()
         adapter.data = learnedItemsList
     }
 }
