@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import com.example.whatdidilearn.R
 import com.example.whatdidilearn.data.DataBaseItems
 import com.example.whatdidilearn.databinding.ActivityMainBinding
+import com.example.whatdidilearn.viewModel.LearnedItemViewModel
+import com.example.whatdidilearn.viewModel.LearnedItemViewModelFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
@@ -24,7 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         val database = DataBaseItems.getDatabase(this, CoroutineScope(Dispatchers.IO))
         val dao = database.learnedItemDao()
-        val itemsList = dao.getAll()
+        val viewModelFactory = LearnedItemViewModelFactory(dao)
+        val viewModel = ViewModelProvider(this, viewModelFactory).get(LearnedItemViewModel::class.java)
+        val itemsList = viewModel.learnedItemsList
         itemsList.observe(this, Observer { items ->
             adapter.data = items
         })

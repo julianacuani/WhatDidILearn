@@ -8,9 +8,9 @@
 
     <TextView
         android:id="@+id/itemTitle"
-        android:layout_width="331dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="20dp"
         android:text="@string/item_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,9 +20,9 @@
     <EditText
         android:id="@+id/editTextTitle"
         style="@android:style/Widget.AutoCompleteTextView"
-        android:layout_width="371dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:ems="10"
         android:hint="@string/edit_text_title"
         android:inputType="textPersonName"
@@ -32,9 +32,9 @@
 
     <TextView
         android:id="@+id/itemDescription"
-        android:layout_width="331dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="20dp"
         android:text="@string/item_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,9 +43,9 @@
 
     <EditText
         android:id="@+id/editTextDescription"
-        android:layout_width="378dp"
+        android:layout_width="0dp"
         android:layout_height="110dp"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:ems="10"
         android:hint="@string/edit_text_description"
         android:inputType="textPersonName"
