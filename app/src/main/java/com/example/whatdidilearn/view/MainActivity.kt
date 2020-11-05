@@ -29,13 +29,11 @@ class MainActivity : AppCompatActivity() {
             adapter.data = items
         })
 
-//-------------------------------------------------------------------------------
         val buttonFab = binding.fab
         buttonFab.setOnClickListener {
             var intent = Intent(this, NewLearnedItem::class.java)
 
             startActivity(intent)
         }
-//--------------------------------------------------------------------------------
     }
 }

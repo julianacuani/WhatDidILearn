@@ -6,31 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".view.NewLearnedItem">
 
-    <EditText
+    <TextView
         android:id="@+id/itemTitle"
-        android:layout_width="0dp"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:text="@string/item_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Item Title" />
 
     <EditText
+        android:id="@+id/editTextTitle"
+        style="@android:style/Widget.AutoCompleteTextView"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="@string/edit_text_title"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
+
+    <TextView
         android:id="@+id/itemDescription"
-        android:layout_width="0dp"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:text="@string/item_description"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSalvar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemTitle"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitle"
         tools:text="Item Description" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="378dp"
+        android:layout_height="110dp"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="@string/edit_text_description"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemDescription" />
 
     <Button
         android:id="@+id/buttonSalvar"
@@ -38,10 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="@string/Salvar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

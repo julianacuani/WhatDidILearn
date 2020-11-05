@@ -4,4 +4,6 @@
     <string name="Salvar">Salvar</string>
     <string name="item_description">Item Description</string>
     <string name="item_title">Item title</string>
+    <string name="edit_text_title">Item name</string>
+    <string name="edit_text_description">small description</string>
 </resources>
