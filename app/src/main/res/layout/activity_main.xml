@@ -24,7 +24,7 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/novo_item"
         android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="@color/sweet_pink"
+        app:backgroundTint="@color/hard_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:rippleColor="#FFFFFF" />

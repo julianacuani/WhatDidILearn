@@ -4,9 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.lifecycle.Observer
+import androidx.lifecycle.liveData
 import com.example.whatdidilearn.R
 import com.example.whatdidilearn.data.DataBaseItems
 import com.example.whatdidilearn.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,15 +22,20 @@ class MainActivity : AppCompatActivity() {
         val adapter = LearnedItemsAdapter()
         recycleView.adapter = adapter
 
-        val learnedItemsList = DataBaseItems.getAll()
-        adapter.data = learnedItemsList
-//-------------------------------------------------------------------------------
-      //  val buttonFab = findViewById<Button>(R.id.fab)
-      //  buttonFab.setOnClickListener {
-      //      var intent = Intent(this, NewLearnedItem::class.java)
+        val database = DataBaseItems.getDatabase(this, CoroutineScope(Dispatchers.IO))
+        val dao = database.learnedItemDao()
+        val itemsList = dao.getAll()
+        itemsList.observe(this, Observer { items ->
+            adapter.data = items
+        })
 
-      //      startActivity(intent)
-      //  }
+//-------------------------------------------------------------------------------
+        val buttonFab = binding.fab
+        buttonFab.setOnClickListener {
+            var intent = Intent(this, NewLearnedItem::class.java)
+
+            startActivity(intent)
+        }
 //--------------------------------------------------------------------------------
     }
 }

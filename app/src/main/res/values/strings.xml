@@ -2,4 +2,6 @@
     <string name="app_name">WhatDidILearn</string>
     <string name="novo_item">novo item</string>
     <string name="Salvar">Salvar</string>
+    <string name="item_description">Item Description</string>
+    <string name="item_title">Item title</string>
 </resources>

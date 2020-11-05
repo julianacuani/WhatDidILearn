@@ -6,34 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".view.NewLearnedItem">
 
-    <TextView
+    <EditText
         android:id="@+id/itemTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
+        android:text="@string/item_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Item Title" />
 
-    <TextView
+    <EditText
         android:id="@+id/itemDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
+        android:text="@string/item_description"
         app:layout_constraintBottom_toTopOf="@+id/buttonSalvar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemTitle"
+        app:layout_constraintVertical_bias="0.0"
         tools:text="Item Description" />
 
     <Button
         android:id="@+id/buttonSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="@string/Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
