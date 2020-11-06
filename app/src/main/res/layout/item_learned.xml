@@ -7,15 +7,17 @@
     android:padding="@dimen/container_padding">
 
     <TextView
-        tools:text="Kotlin - Null safety"
         android:id="@+id/itemTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:padding="@dimen/text_padding"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/itemDescription"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/itemLevel" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/itemLevel"
+        tools:text="Kotlin - Null safety" />
 
     <TextView
         tools:text="O sistema de tipos de Kotlin visa eliminar o perigo de referências nulas do código"
@@ -38,5 +40,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/itemTitle"
         tools:background="#FF0000"></LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:drawableLeft="@drawable/ic_baseline_delete_forever_24"
+        app:layout_constraintEnd_toEndOf="@+id/itemTitle"
+        app:layout_constraintTop_toTopOf="@+id/itemTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

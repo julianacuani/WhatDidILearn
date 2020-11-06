@@ -6,4 +6,9 @@
     <string name="item_title">Item title</string>
     <string name="edit_text_title">Item name</string>
     <string name="edit_text_description">small description</string>
+    <string name="botao_de_deletar">botão de deletar</string>
+    <string name="nivel_de_entendimento"><b>Nível de entendimento</b></string>
+    <string name="medio">Médio</string>
+    <string name="baixo">Baixo</string>
+    <string name="alto">Alto :)</string>
 </resources>

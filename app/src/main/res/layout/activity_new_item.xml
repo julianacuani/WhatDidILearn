@@ -60,6 +60,51 @@
         android:layout_margin="20dp"
         android:text="@string/Salvar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton_Medium" />
+
+    <RadioButton
+        android:id="@+id/radioButton_High"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alto"
+        android:textColorHighlight="@color/hard_pink"
+        android:textColorLink="@color/hard_pink"
+        app:layout_constraintBottom_toBottomOf="@+id/radioButton_Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/radioButton_Medium" />
+
+    <RadioButton
+        android:id="@+id/radioButton_Low"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/baixo"
+        android:textColorLink="@color/hard_pink"
+        app:layout_constraintEnd_toStartOf="@+id/radioButton_Medium"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nivel_entendimento" />
+
+    <RadioButton
+        android:id="@+id/radioButton_Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/medio"
+        android:textColorLink="@color/hard_pink"
+        app:layout_constraintBottom_toBottomOf="@+id/radioButton_Low"
+        app:layout_constraintEnd_toStartOf="@+id/radioButton_High"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/radioButton_Low" />
+
+    <TextView
+        android:id="@+id/nivel_entendimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/nivel_de_entendimento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
 
